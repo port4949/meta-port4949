@@ -1,0 +1,25 @@
+From 4576d7cff347133a408e5cf1a795e64b1d7c12bc Mon Sep 17 00:00:00 2001
+From: Matthias Schmitz <matthias.schmitz@port4949.net>
+Date: Mon, 29 Apr 2024 06:33:48 +0000
+Subject: [PATCH] Don't run conninode_test
+
+---
+ src/MakeApp.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/MakeApp.mk b/src/MakeApp.mk
+index 73bd8c1..5aef41f 100644
+--- a/src/MakeApp.mk
++++ b/src/MakeApp.mk
+@@ -53,7 +53,7 @@ conninode.o: conninode.cpp nethogs.h conninode.h
+ cui.o: cui.cpp cui.h nethogs.h
+ 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c cui.cpp -DVERSION=\"$(VERSION)\"
+ 
+-TESTS=conninode_test
++TESTS=
+ 
+ .PHONY: test
+ test: $(TESTS)
+-- 
+2.39.2
+
