@@ -3,7 +3,9 @@ LICENSE = "GPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
                     file://COPYRIGHT;md5=305b69910aa70e84902cbf2bfbed8aae \
                    "
-SRC_URI = "git://github.com/mattthias/slurm.git;protocol=https;branch=upstream"
+SRC_URI = "git://github.com/mattthias/slurm.git;protocol=https;branch=upstream \
+           file://0001-Use-ncurses-dependency-or-Yocto-Dunfell-doesn-t-work.patch \
+"
 
 # Modify these as desired
 PV = "0.4.4"

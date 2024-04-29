@@ -1,0 +1,25 @@
+From b2503e931054bf97a2751a9b670e710cada8027e Mon Sep 17 00:00:00 2001
+From: Matthias Schmitz <matthias.schmitz@port4949.net>
+Date: Mon, 29 Apr 2024 07:35:23 +0000
+Subject: [PATCH] Use "ncurses" dependency or Yocto Dunfell doesn't work
+
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 459627b..5cbe26e 100644
+--- a/meson.build
++++ b/meson.build
+@@ -11,7 +11,7 @@ configure_file(input : 'config.h.in',
+ # We want ncurses but meson wraps ncurses and curses into the curses dependency
+ # https://mesonbuild.com/Dependencies.html#curses
+ # dependency "ncurses" doesn't work on OpenBSD so we use "curses" on all OS
+-curses_dep = dependency('curses', version: '>=5')
++curses_dep = dependency('ncurses', version: '>=5')
+ 
+ add_global_arguments('-D_HAVE_NCURSES', language: 'c')
+ 
+-- 
+2.39.2
+
